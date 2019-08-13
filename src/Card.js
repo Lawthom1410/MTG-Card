@@ -8,7 +8,6 @@ export class Card extends Component{
         width: "500px",
         margin: "auto",
         marginTop: "15vh"
-        // border: "solid black"
     }
 
     headerFooterStyle = {
@@ -34,7 +33,7 @@ export class Card extends Component{
             <div style={this.cardStyle}>
                 <div className="card">
                     <header className="row card-header" style={this.headerFooterStyle}>
-                        <h3 className="col">Samwise Gamgee</h3>
+                        <h3 className="col">{this.props.cardDetails.name}</h3>
                         <div className="col">
                             <div className="row">
                                 <img src={manaNum} style={this.manaStyle} />
@@ -45,17 +44,17 @@ export class Card extends Component{
                     <div>
                         <img src={image} style={this.imgStyle} />
                         <div className="card-body" style={this.bodyStyle}>
-                            <h4>Legendary Creature - Hobbit Fighter  \/</h4>
+                            <h4>{this.props.cardDetails.typeLine}</h4>
                             <div>
-                                <p>Nip - When a creature over 4ft enters the battle field, you can sneak up and bite their ankles to Sugar Honey Iced Tea.</p>
-                                <p>When a teammate is injured, you can carry them up Mount Doom.</p> 
+                                <p>{this.props.cardDetails.ability1}</p>
+                                <p>{this.props.cardDetails.ability2}</p> 
                             </div>
                         </div>
                     </div>
                     <footer className="row card-footer" style={this.headerFooterStyle}>
-                        <p className="col">J.R.R Tolkien</p>
-                        <p className="col">00001</p>
-                        <p className="col">20/20</p>
+                        <p className="col">{this.props.cardDetails.artistInfo}</p>
+                        <p className="col">{this.props.cardDetails.collectorNum}</p>
+                        <p className="col">{this.props.cardDetails.powTough}</p>
                     </footer>
                 </div>
             </div>
