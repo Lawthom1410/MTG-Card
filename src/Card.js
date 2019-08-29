@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import image from './SamGamgee.jpg';
 import mana from './mana.png';
 import manaNum from './manaNum.png';
 
@@ -17,6 +16,7 @@ export class Card extends Component{
 
     imgStyle = {
         width: "300px",
+        height: "400px",
         margin: "auto"
     }
 
@@ -30,9 +30,9 @@ export class Card extends Component{
 
     render(){
         return(
-            <div style={this.cardStyle}>
-                <div className="card">
-                    <header className="row card-header" style={this.headerFooterStyle}>
+            <div className="col">
+                <div className="card fly-x" style={this.cardStyle}>
+                    <header className="row card-header App-logo-re" style={this.headerFooterStyle}>
                         <h3 className="col">{this.props.cardDetails.name}</h3>
                         <div className="col">
                             <div className="row">
@@ -42,18 +42,17 @@ export class Card extends Component{
                         </div>
                     </header>
                     <div>
-                        <img src={image} style={this.imgStyle} />
-                        <div className="card-body" style={this.bodyStyle}>
+                        <img className="App-logo-rev" src={this.props.cardDetails.imageUrl} style={this.imgStyle} />
+                        <div className="card-body App-logo-re" style={this.bodyStyle}>
                             <h4>{this.props.cardDetails.typeLine}</h4>
                             <div>
-                                <p>{this.props.cardDetails.ability1}</p>
-                                <p>{this.props.cardDetails.ability2}</p> 
+                                <p>{this.props.cardDetails.ability}</p>  
                             </div>
                         </div>
                     </div>
-                    <footer className="row card-footer" style={this.headerFooterStyle}>
+                    <footer className="row card-footer App-logo-re" style={this.headerFooterStyle}>
                         <p className="col">{this.props.cardDetails.artistInfo}</p>
-                        <p className="col">{this.props.cardDetails.collectorNum}</p>
+                        <p className="col">{this.props.cardDetails.cardId}</p>
                         <p className="col">{this.props.cardDetails.powTough}</p>
                     </footer>
                 </div>
